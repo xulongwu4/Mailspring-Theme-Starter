@@ -1,10 +1,10 @@
 {
-  "name": "theme-starter",
-  "title": "Starter Theme",
-  "displayName": "Starter Theme",
+  "name": "nord-mailspring",
+  "title": "Nord Theme for Mailspring",
+  "displayName": "Nord",
   "theme": "ui",
   "version": "0.1.0",
-  "description": "A great dark theme to start your own themes.",
+  "description": "A dark theme based on the Nord color palette.",
   "license": "MIT",
   "engines": {
     "mailspring": "*"
