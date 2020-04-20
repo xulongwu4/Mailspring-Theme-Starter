@@ -1,0 +1,91 @@
+@import "ui-variables";
+
+// // Remove inverted color effects
+// .thread-list .focused .thread-icon,
+// .draft-list .focused .thread-icon,
+// .thread-list .focused .draft-icon,
+// .draft-list .focused .draft-icon,
+// .thread-list .focused .mail-important-icon,
+// .draft-list .focused .mail-important-icon,
+// .thread-list.handler-split .list-item.selected .thread-icon,
+// .thread-list.handler-split .list-item.selected .draft-icon,
+// .thread-list.handler-split .list-item.selected .mail-important-icon {
+//   filter: none !important;
+// }
+
+.mail-important-icon,
+.mail-important-icon.enabled.active,
+.mail-important-icon.enabled:hover,
+.mail-important-icon.enabled.active:hover {
+  background-image: none;
+  // background-color: @accent-primary;
+  background-color: @nord11;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 14px;
+  -webkit-mask-position: center;
+  // -webkit-mask-image: url(../static/images/important/Icon-Important-Hover@2x.png);
+}
+
+.mail-important-icon {
+  // background-image: none;
+  // // background-color: @accent-primary;
+  // background-color: @nord11;
+  // -webkit-mask-repeat: no-repeat;
+  // -webkit-mask-size: 14px;
+  // -webkit-mask-position: center;
+  -webkit-mask-image: url(../static/images/important/Icon-Important-Hover@2x.png);
+}
+
+.mail-important-icon.enabled.active {
+  -webkit-mask-image: url(../static/images/important/Icon-Important-Active@2x.png);
+}
+
+.mail-important-icon.enabled:hover {
+  -webkit-mask-image: url(../static/images/important/Icon-Important-HoverActive@2x.png);
+}
+
+.mail-important-icon.enabled.active:hover {
+  -webkit-mask-image: url(../static/images/important/Icon-Important-Active@2x.png);
+}
+
+// Base settings for replacing backgrounds with filters for easier color changes
+.thread-list .thread-icon {
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 14px;
+  -webkit-mask-position: center;
+}
+
+// Change color of unread dot icon
+.thread-list .thread-icon.thread-icon-unread {
+  background-image: none;
+  background-color: @accent-primary;
+  -webkit-mask-image: url(../static/images/thread-list/icon-unread-@2x.png);
+}
+
+// // The gradient behind threadlist hover icons (Snooze, Arvhive Delete)
+// .thread-list .list-item:hover .list-column-HoverActions .inner,
+// .thread-list .list-item.focused:hover .list-column-HoverActions .inner,
+// .thread-list .list-item.selected:hover .list-column-HoverActions .inner,
+// .thread-list.handler-split .list-item.selected:hover .list-column-HoverActions .inner {
+//   background-image: linear-gradient(
+//     to right,
+//     fade(@accent-primary, 0%) 0%,
+//     @accent-primary 40%,
+//     @accent-primary 100%
+//   );
+// }
+
+// The gradient behind threadlist hover icons (Snooze, Arvhive Delete)
+.thread-list .list-item.focused:hover .list-column-HoverActions .inner,
+.thread-list .list-item.selected:hover .list-column-HoverActions .inner,
+.thread-list.handler-split .list-item.selected:hover .list-column-HoverActions .inner {
+  background-image: linear-gradient(
+    to right,
+    fade(@accent-primary, 0%) 0%,
+    @accent-primary 40%,
+    @accent-primary 100%
+  );
+  .action {
+      filter: invert(0%);
+  }
+}

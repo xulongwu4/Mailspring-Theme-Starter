@@ -1,0 +1,20 @@
+@import "ui-variables";
+
+.list-container .list-item.focused,
+.list-container .list-item.selected,
+.thread-list.handler-split .list-item.selected {
+  color: @active-thread-text;
+  font-weight: bold;
+}
+
+.list-tabular .list-tabular-item {
+  background-color: @nord0;
+  // border-bottom: 1px solid @border-color-divider !important;
+  border-bottom: 1px solid @nord0 !important;
+}
+
+// Using !important so multiple selection actions
+.list-tabular .list-tabular-item:not(.focused):hover {
+  background: @nord1 !important;
+  color: @nord4;
+}
