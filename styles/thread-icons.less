@@ -1,38 +1,30 @@
 @import "ui-variables";
 
-// // Remove inverted color effects
-// .thread-list .focused .thread-icon,
-// .draft-list .focused .thread-icon,
-// .thread-list .focused .draft-icon,
-// .draft-list .focused .draft-icon,
-// .thread-list .focused .mail-important-icon,
-// .draft-list .focused .mail-important-icon,
-// .thread-list.handler-split .list-item.selected .thread-icon,
-// .thread-list.handler-split .list-item.selected .draft-icon,
-// .thread-list.handler-split .list-item.selected .mail-important-icon {
-//   filter: none !important;
-// }
+// Remove inverted color effects
+.thread-list .focused .thread-icon,
+.draft-list .focused .thread-icon,
+.thread-list .focused .draft-icon,
+.draft-list .focused .draft-icon,
+.thread-list .focused .mail-important-icon,
+.draft-list .focused .mail-important-icon,
+.thread-list.handler-split .list-item.selected .thread-icon,
+.thread-list.handler-split .list-item.selected .draft-icon,
+.thread-list.handler-split .list-item.selected .mail-important-icon {
+  filter: none !important;
+}
 
 .mail-important-icon,
 .mail-important-icon.enabled.active,
 .mail-important-icon.enabled:hover,
 .mail-important-icon.enabled.active:hover {
   background-image: none;
-  // background-color: @accent-primary;
   background-color: @nord11;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 14px;
   -webkit-mask-position: center;
-  // -webkit-mask-image: url(../static/images/important/Icon-Important-Hover@2x.png);
 }
 
 .mail-important-icon {
-  // background-image: none;
-  // // background-color: @accent-primary;
-  // background-color: @nord11;
-  // -webkit-mask-repeat: no-repeat;
-  // -webkit-mask-size: 14px;
-  // -webkit-mask-position: center;
   -webkit-mask-image: url(../static/images/important/Icon-Important-Hover@2x.png);
 }
 
@@ -62,18 +54,55 @@
   -webkit-mask-image: url(../static/images/thread-list/icon-unread-@2x.png);
 }
 
-// // The gradient behind threadlist hover icons (Snooze, Arvhive Delete)
-// .thread-list .list-item:hover .list-column-HoverActions .inner,
-// .thread-list .list-item.focused:hover .list-column-HoverActions .inner,
-// .thread-list .list-item.selected:hover .list-column-HoverActions .inner,
-// .thread-list.handler-split .list-item.selected:hover .list-column-HoverActions .inner {
-//   background-image: linear-gradient(
-//     to right,
-//     fade(@accent-primary, 0%) 0%,
-//     @accent-primary 40%,
-//     @accent-primary 100%
-//   );
-// }
+// Change color of star icon
+.thread-list .thread-icon.thread-icon-star {
+  background-image: none;
+  background-color: @nord13;
+  -webkit-mask-image: url(../static/images/thread-list/icon-star-@2x.png);
+}
+
+.thread-list .list-item:hover .thread-icon-star-on-hover {
+  filter: none !important;
+  background-image: none;
+  background-color: @nord13;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 14px;
+  -webkit-mask-position: center;
+  -webkit-mask-image: url(../static/images/thread-list/icon-star-hover-@2x.png);
+  // &:hover {
+  //   background-color: @nord3;
+  //   -webkit-mask-image: url(../static/images/thread-list/icon-star-@2x.png);
+  // }
+}
+
+// Replace undread icon with star icon on thread item hover
+.thread-list .list-item:hover .thread-icon.thread-icon-unread {
+  filter: none !important;
+  background-image: none;
+  background-color: @nord13;
+  -webkit-mask-image: url(../static/images/thread-list/icon-star-hover-@2x.png);
+  &:hover {
+    background-image: none;
+    background-color: @nord3;
+    -webkit-mask-image: url(../static/images/thread-list/icon-star-@2x.png);
+  }
+}
+
+// for Read messages, use the solid star on item hover as well
+.thread-list .list-item:hover .thread-icon-none {
+  filter: none !important;
+  background-image: none;
+  background-color: @nord13;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 14px;
+  -webkit-mask-position: center;
+  -webkit-mask-image: url(../static/images/thread-list/icon-star-hover-@2x.png);
+  &:hover {
+    background-image: none;
+    background-color: @nord3;
+    -webkit-mask-image: url(../static/images/thread-list/icon-star-@2x.png);
+  }
+}
 
 // The gradient behind threadlist hover icons (Snooze, Arvhive Delete)
 .thread-list .list-item.focused:hover .list-column-HoverActions .inner,
@@ -86,6 +115,6 @@
     @accent-primary 100%
   );
   .action {
-      filter: invert(0%);
+      filter: none !important;
   }
 }
